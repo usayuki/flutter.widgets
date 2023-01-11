@@ -290,7 +290,9 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
         widget.itemScrollController?.scrollController ??
             ScrollController(keepScrollOffset: false));
     secondary = _ListDisplayDetails(
-        const ValueKey('Pong'), ScrollController(keepScrollOffset: false));
+        const ValueKey('Pong'),
+        widget.itemScrollController?.scrollController ??
+            ScrollController(keepScrollOffset: false));
     primary.target = initialPosition?.index ?? widget.initialScrollIndex;
     primary.alignment =
         initialPosition?.itemLeadingEdge ?? widget.initialAlignment;
